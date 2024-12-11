@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'blog_app',
+    'django_extensions'
 ]
 
 MIDDLEWARE = [
@@ -69,8 +70,9 @@ TEMPLATES = [
     },
 ]
 
+AUTH_USER_MODEL = 'blog_app.User'
 WSGI_APPLICATION = 'blog_service.wsgi.application'
-
+APPEND_SLASH = True
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
