@@ -1,33 +1,33 @@
 
 # Для запуска локального сервера по адресу http://127.0.0.1:8000/
 
-# pip install -r requirements.txt
-# python blog_service/manage.py runserver
+### pip install -r requirements.txt
+### python blog_service/manage.py runserver
 
 # Для входа в аккаунт http://127.0.0.1:8000/admin/
 
 # Пароли
-# admin admin
-# ===============================================================================
+### admin admin
+### ===============================================================================
 
 # Навигация
                                        
-/blogs.views.home        home
-/admin/
-/api/   
-/api/blogs/     blogs.views.BlogViewSet blog-list
-/api/comments/  blogs.views.CommentViewSet      comment-list
-/api/posts/     blogs.views.PostViewSet post-list
-/api/tags/      blogs.views.TagViewSet  tag-list
-/posts/<int:pk>/        blogs.views.PostViewSet post_detail
+### /blogs.views.home        home
+### /admin/
+### /api/   
+### /api/blogs/     blogs.views.BlogViewSet blog-list
+### /api/comments/  blogs.views.CommentViewSet      comment-list
+### /api/posts/     blogs.views.PostViewSet post-list
+### /api/tags/      blogs.views.TagViewSet  tag-list
+### /posts/<int:pk>/        blogs.views.PostViewSet post_detail
 
 
 
-# ===============================================================================
-Задание Тестовое задание Python (hard)
-# ===============================================================================
+### ===============================================================================
+# Задание Тестовое задание Python (hard)
+### ===============================================================================
 
-Реализовать сервис, который принимает и отвечает на
+> ``` Реализовать сервис, который принимает и отвечает на
 HTTP запросы.
 Структура:
 Блог
@@ -78,7 +78,7 @@ HTTP запросы.
 •	добавлять блоги в «мои подписки»
 Возможности администратора:
 •	может создавать, редактировать и удалять любые сущности
-Страницы (отдельные URL):
+```
 •	главная — последние N постов со всех блогов
 •	страница «список блогов» — последние N блогов по дате обновления
 •	страница «посты блога» — последние N постов по дате публикации
