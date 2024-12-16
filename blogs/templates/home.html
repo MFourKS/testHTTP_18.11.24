@@ -1,0 +1,44 @@
+<!-- blogs/templates/home.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Service</title>
+</head>
+<body>
+    <center><h1>Local server testPhytonMediaSoft_1.2</h1></center>
+
+    <h2>Latest Posts</h2>
+
+    <ul>
+        {% for post in page_obj %}
+            <li>
+                <h3>{{ post.title }}</h3>
+                <p>{{ post.body|truncatewords:30 }}</p>
+                <p><strong>Author:</strong> {{ post.author.username }}</p>
+                <p><strong>Blog:</strong> {{ post.blog.title }}</p>
+                <p><a href="{% url 'post_detail' pk=post.pk %}">Read more...</a></p>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <div class="pagination">
+        <span class="step-links">
+            {% if page_obj.has_previous %}
+                <a href="?page=1">&laquo; first</a>
+                <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+            {% endif %}
+
+            <span class="current">
+                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+            </span>
+
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}">next</a>
+                <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+            {% endif %}
+        </span>
+    </div>
+</body>
+</html>
